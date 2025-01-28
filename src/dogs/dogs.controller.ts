@@ -1,7 +1,10 @@
 import { HttpService } from '@nestjs/axios';
 import { Controller, Get } from '@nestjs/common';
 import { DogBreedsResponse, DogImageResponse } from './dogs.types';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { DogImage } from './entities/dog.entity';
 
+@ApiTags('dogs')
 @Controller('dogs')
 export class DogsController {
   constructor(private readonly httpService: HttpService) {}
@@ -9,6 +12,8 @@ export class DogsController {
   dogsApi = 'https://dog.ceo/api';
 
   @Get('image')
+  @ApiOperation({ summary: 'Get a random dog image' })
+  @ApiResponse({ status: 200, type: DogImage })
   async getImage() {
     const url = `${this.dogsApi}/breeds/image/random`;
 
