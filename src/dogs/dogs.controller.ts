@@ -1,8 +1,8 @@
 import { HttpService } from '@nestjs/axios';
 import { Controller, Get } from '@nestjs/common';
-import { DogBreedsResponse, DogImageResponse } from './dogs.types';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { DogImage } from './entities/dog.entity';
+import { DogBreedsResponse } from './entities/breed.entity';
 
 @ApiTags('dogs')
 @Controller('dogs')
@@ -18,8 +18,7 @@ export class DogsController {
     const url = `${this.dogsApi}/breeds/image/random`;
 
     try {
-      const response =
-        await this.httpService.axiosRef.get<DogImageResponse>(url);
+      const response = await this.httpService.axiosRef.get<DogImage>(url);
 
       return response.data.message;
     } catch (error: unknown) {
@@ -33,6 +32,11 @@ export class DogsController {
   }
 
   @Get('breeds')
+  @ApiResponse({
+    status: 200,
+    description: 'Returns a map of dog breeds and their sub-breeds.',
+    type: DogBreedsResponse,
+  })
   async getBreeds() {
     const url = `${this.dogsApi}/breeds/list/all`;
 
