@@ -69,7 +69,9 @@ export function useAppControllerGetHello<
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getAppControllerGetHelloQueryOptions(options);
 
-  const query = useQuery(queryOptions);
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
 
   query.queryKey = queryOptions.queryKey;
 

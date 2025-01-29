@@ -20,7 +20,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "configure": "pnpm run configure:env-vars",
     "configure:env-vars": "cp .env.example .env",
-    "generate-api": "orval"
+    "generate:swagger": "ts-node ./scripts/generate-swagger-definition.ts",
+    "generate:api": "orval",
+    "generate:package": "pnpm run generate:swagger && pnpm run generate:api"
   },
   "dependencies": {
     "@nestjs/axios": "^4.0.0",
