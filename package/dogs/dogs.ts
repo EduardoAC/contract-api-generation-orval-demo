@@ -78,9 +78,7 @@ export function useDogsControllerGetImage<
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getDogsControllerGetImageQueryOptions(options);
 
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-    queryKey: QueryKey;
-  };
+  const query = useQuery(queryOptions);
 
   query.queryKey = queryOptions.queryKey;
 
@@ -142,9 +140,7 @@ export function useDogsControllerGetBreeds<
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getDogsControllerGetBreedsQueryOptions(options);
 
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-    queryKey: QueryKey;
-  };
+  const query = useQuery(queryOptions);
 
   query.queryKey = queryOptions.queryKey;
 
