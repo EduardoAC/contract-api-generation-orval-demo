@@ -11,7 +11,7 @@ export default defineConfig({
       prettier: true,
     },
     input: {
-      target: './swagger-spec.json',
+      target: './package/swagger-spec.json',
     },
   },
 });

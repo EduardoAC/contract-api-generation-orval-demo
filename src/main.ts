@@ -15,7 +15,10 @@ async function bootstrap() {
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   const document = SwaggerModule.createDocument(app, config);
-  writeFileSync('./swagger-spec.json', JSON.stringify(document, undefined, 2));
+  writeFileSync(
+    './package/swagger-spec.json',
+    JSON.stringify(document, undefined, 2),
+  );
   SwaggerModule.setup('api', app, documentFactory);
   SwaggerModule.setup('swagger', app, documentFactory, {
     jsonDocumentUrl: 'swagger/json',
