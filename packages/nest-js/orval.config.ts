@@ -6,7 +6,7 @@ const config: Config = {
   nestjs_api: {
     output: {
       mode: 'tags-split',
-      workspace: `../${packageName}`,
+      workspace: `../${packageName}/src/`,
       target: './dogs.ts',
       schemas: 'model',
       client: 'react-query',
