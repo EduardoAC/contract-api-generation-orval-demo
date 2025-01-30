@@ -80,9 +80,10 @@ export function useDogsControllerGetImage<
 
   const query = useQuery(queryOptions);
 
-  query.queryKey = queryOptions.queryKey;
-
-  return query;
+  return {
+    ...query,
+    queryKey: queryOptions.queryKey,
+  };
 }
 
 export const dogsControllerGetBreeds = (
@@ -142,7 +143,8 @@ export function useDogsControllerGetBreeds<
 
   const query = useQuery(queryOptions);
 
-  query.queryKey = queryOptions.queryKey;
-
-  return query;
+  return {
+    ...query,
+    queryKey: queryOptions.queryKey,
+  };
 }

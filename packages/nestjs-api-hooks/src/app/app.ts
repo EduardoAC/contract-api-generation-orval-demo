@@ -71,7 +71,8 @@ export function useAppControllerGetHello<
 
   const query = useQuery(queryOptions);
 
-  query.queryKey = queryOptions.queryKey;
-
-  return query;
+  return {
+    ...query,
+    queryKey: queryOptions.queryKey,
+  };
 }
