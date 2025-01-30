@@ -1,7 +1,8 @@
-import { defineConfig } from 'orval';
+import { Config } from '@orval/core';
 
-const packageName = "nestjs-api-hooks"
-export default defineConfig({
+const packageName = 'nestjs-api-hooks';
+
+const config: Config = {
   nestjs_api: {
     output: {
       mode: 'tags-split',
@@ -16,4 +17,6 @@ export default defineConfig({
       target: `../${packageName}/swagger-spec.json`,
     },
   },
-});
+};
+
+export default config;
