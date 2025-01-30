@@ -1,17 +1,19 @@
 import { defineConfig } from 'orval';
 
+const packageName = "nestjs-api-hooks"
 export default defineConfig({
-  dogs: {
+  nestjs_api: {
     output: {
       mode: 'tags-split',
-      target: 'package/dogs.ts',
-      schemas: 'package/model',
+      workspace: `../${packageName}`,
+      target: './dogs.ts',
+      schemas: 'model',
       client: 'react-query',
       mock: true,
       prettier: true,
     },
     input: {
-      target: './package/swagger-spec.json',
+      target: `../${packageName}/swagger-spec.json`,
     },
   },
 });

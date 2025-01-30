@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from '../src/app.module';
+import { AppModule } from '../../../src/app.module';
 import { writeFileSync } from 'node:fs';
 
 async function generateSwaggerSpec() {
@@ -19,7 +19,7 @@ async function generateSwaggerSpec() {
 
   // Write Swagger spec to a file
   writeFileSync(
-    './package/swagger-spec.json',
+    '../nestjs-api-hooks/swagger-spec.json',
     JSON.stringify(document, null, 2),
   );
 

@@ -14,7 +14,7 @@ import type {
 } from '@tanstack/react-query';
 import axios from 'axios';
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import type { DogBreedsResponse, DogImage } from '.././model';
+import type { DogBreedsResponse, DogImage } from '../model';
 
 /**
  * @summary Get a random dog image

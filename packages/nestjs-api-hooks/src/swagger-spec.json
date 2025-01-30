@@ -1,0 +1,139 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/dogs/image": {
+      "get": {
+        "operationId": "DogsController_getImage",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DogImage"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a random dog image",
+        "tags": [
+          "dogs"
+        ]
+      }
+    },
+    "/dogs/breeds": {
+      "get": {
+        "operationId": "DogsController_getBreeds",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns a map of dog breeds and their sub-breeds.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DogBreedsResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "dogs"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "API example",
+    "description": "The example API description",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "example",
+      "description": ""
+    }
+  ],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "DogImage": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "https://images.dog.ceo/breeds/elkhound-norwegian/n02091467_2159.jpg",
+            "description": "Dog image"
+          },
+          "status": {
+            "type": "string",
+            "example": "success",
+            "description": "Response status"
+          }
+        },
+        "required": [
+          "message",
+          "status"
+        ]
+      },
+      "DogBreedsResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "object",
+            "description": "A map of dog breeds and their sub-breeds",
+            "example": {
+              "affenpinscher": [],
+              "australian": [
+                "kelpie",
+                "shepherd"
+              ],
+              "bulldog": [
+                "boston",
+                "english",
+                "french"
+              ],
+              "retriever": [
+                "golden",
+                "chesapeake",
+                "curly"
+              ]
+            },
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the response",
+            "example": "success"
+          }
+        },
+        "required": [
+          "message",
+          "status"
+        ]
+      }
+    }
+  }
+}
