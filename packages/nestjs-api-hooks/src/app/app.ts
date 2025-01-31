@@ -18,11 +18,11 @@ import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 export const appControllerGetHello = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<void>> => {
-  return axios.get(`/`, options);
+  return axios.get(`http://localhost:3000/`, options);
 };
 
 export const getAppControllerGetHelloQueryKey = () => {
-  return [`/`] as const;
+  return [`http://localhost:3000/`] as const;
 };
 
 export const getAppControllerGetHelloQueryOptions = <
@@ -69,10 +69,11 @@ export function useAppControllerGetHello<
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getAppControllerGetHelloQueryOptions(options);
 
-  const query = useQuery(queryOptions);
-
-  return {
-    ...query,
-    queryKey: queryOptions.queryKey,
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
   };
+
+  query.queryKey = queryOptions.queryKey;
+
+  return query;
 }

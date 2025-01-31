@@ -10,6 +10,7 @@ const config: Config = {
       target: './dogs.ts',
       schemas: 'model',
       client: 'react-query',
+      baseUrl: 'http://localhost:3000',
       mock: true,
       prettier: true,
     },

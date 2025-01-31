@@ -22,11 +22,11 @@ import type { DogBreedsResponse, DogImage } from '.././model';
 export const dogsControllerGetImage = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<DogImage>> => {
-  return axios.get(`/dogs/image`, options);
+  return axios.get(`http://localhost:3000/dogs/image`, options);
 };
 
 export const getDogsControllerGetImageQueryKey = () => {
-  return [`/dogs/image`] as const;
+  return [`http://localhost:3000/dogs/image`] as const;
 };
 
 export const getDogsControllerGetImageQueryOptions = <
@@ -78,22 +78,23 @@ export function useDogsControllerGetImage<
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getDogsControllerGetImageQueryOptions(options);
 
-  const query = useQuery(queryOptions);
-
-  return {
-    ...query,
-    queryKey: queryOptions.queryKey,
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
   };
+
+  query.queryKey = queryOptions.queryKey;
+
+  return query;
 }
 
 export const dogsControllerGetBreeds = (
   options?: AxiosRequestConfig,
 ): Promise<AxiosResponse<DogBreedsResponse>> => {
-  return axios.get(`/dogs/breeds`, options);
+  return axios.get(`http://localhost:3000/dogs/breeds`, options);
 };
 
 export const getDogsControllerGetBreedsQueryKey = () => {
-  return [`/dogs/breeds`] as const;
+  return [`http://localhost:3000/dogs/breeds`] as const;
 };
 
 export const getDogsControllerGetBreedsQueryOptions = <
@@ -141,10 +142,11 @@ export function useDogsControllerGetBreeds<
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getDogsControllerGetBreedsQueryOptions(options);
 
-  const query = useQuery(queryOptions);
-
-  return {
-    ...query,
-    queryKey: queryOptions.queryKey,
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
   };
+
+  query.queryKey = queryOptions.queryKey;
+
+  return query;
 }
