@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true, // Generate declaration files
+    "outDir": "dist", // Ensure declarations go to the correct folder
+    "declarationDir": "dist/types", // Ensure declarations go to the correct folder
+    "rootDir": "src" // Specify root for TypeScript files
+  },
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }
