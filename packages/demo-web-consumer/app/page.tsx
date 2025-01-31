@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useDogsControllerGetImage } from "nestjs-api-hooks"
 
 export default function Home() {
-  console.log("Home")
+  console.log("Home");
   const { data, isLoading } = useDogsControllerGetImage()
   console.log(data, isLoading)
   return (

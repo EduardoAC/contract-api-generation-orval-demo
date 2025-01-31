@@ -40,8 +40,8 @@ importers:
         specifier: 15.1.6
         version: 15.1.6(eslint@9.19.0(jiti@1.21.7))(typescript@5.7.3)
       nestjs-api-hooks:
-        specifier: ^1.0.0
-        version: 1.0.0(@types/node@20.17.16)(react@19.0.0)(typescript@5.7.3)
+        specifier: ^1.0.2
+        version: 1.0.2(@faker-js/faker@9.4.0)(@tanstack/react-query@5.65.1(react@19.0.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.16)(typescript@5.7.3))(react@19.0.0)(typescript@5.7.3)
       postcss:
         specifier: ^8
         version: 8.5.1
@@ -1327,8 +1327,15 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nestjs-api-hooks@1.0.0:
-    resolution: {integrity: sha512-EppKq//1KNhqcd0+hvAPdUiQ/bntqS5OKUPegJ0+NemNajf7lH83IpbphKSrZ1ZLQ4akM4EMI0+8fOrfcmRoOA==}
+  nestjs-api-hooks@1.0.2:
+    resolution: {integrity: sha512-LxsAqck0VqUnrSBIg0EMG9BDie70oYduQYrs8gino5xkk6e18IuUVvUuxbFVlItWsJ84Dx1C7HECtHavQzGARg==}
+    peerDependencies:
+      '@faker-js/faker': ^9.4.0
+      '@tanstack/react-query': ^5.65.1
+      axios: ^1.7.9
+      msw: ^2.7.0
+      react: ^18.0.0
+      typescript: ^5.7.3
 
   next@15.1.6:
     resolution: {integrity: sha512-Hch4wzbaX0vKQtalpXvUiw5sYivBy4cm5rzUKrBnUB/y436LGrvOUqYvlSeNVCWFO/770gDlltR9gqZH62ct4Q==}
@@ -3330,17 +3337,14 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nestjs-api-hooks@1.0.0(@types/node@20.17.16)(react@19.0.0)(typescript@5.7.3):
+  nestjs-api-hooks@1.0.2(@faker-js/faker@9.4.0)(@tanstack/react-query@5.65.1(react@19.0.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.16)(typescript@5.7.3))(react@19.0.0)(typescript@5.7.3):
     dependencies:
       '@faker-js/faker': 9.4.0
       '@tanstack/react-query': 5.65.1(react@19.0.0)
       axios: 1.7.9
       msw: 2.7.0(@types/node@20.17.16)(typescript@5.7.3)
-    transitivePeerDependencies:
-      - '@types/node'
-      - debug
-      - react
-      - typescript
+      react: 19.0.0
+      typescript: 5.7.3
 
   next@15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
