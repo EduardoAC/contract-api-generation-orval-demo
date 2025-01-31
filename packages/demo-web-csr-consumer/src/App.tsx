@@ -6,9 +6,9 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const { data, isLoading } = useDogsControllerGetImage()
+  const { data, isFetched } = useDogsControllerGetImage()
 
-  console.log(data, isLoading)
+  console.log(data, isFetched)
   return (
     <>
       <div>
@@ -18,6 +18,9 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        {isFetched && data && (
+          <img src={(data.data as any as string)} className="logo react" alt="Dog logo" />
+        )}
       </div>
       <h1>Vite + React</h1>
       <div className="card">
