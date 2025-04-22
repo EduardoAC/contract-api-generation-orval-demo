@@ -1,107 +1,59 @@
-"use client"
+"use client";
 
 import Image from "next/image";
-import { useDogsControllerGetImage } from "nestjs-api-hooks"
+import {
+  useDogsControllerGetImage,
+  useDogsControllerGetBreeds,
+} from "nestjs-api-hooks";
 
 export default function Home() {
-  console.log("Home");
-  const { data, isLoading } = useDogsControllerGetImage()
-  console.log(data, isLoading)
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src={isLoading ? "/vercel.svg" : (data?.data as string | undefined) || ""}
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { data: imageData, isLoading: imageLoading } = useDogsControllerGetImage();
+  const { data: breedData, isFetched: breedFetched } = useDogsControllerGetBreeds();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src={"/vercel.svg"}
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  const imageUrl = !imageLoading ? (imageData?.data as unknown as string) : null;
+
+  const flattenedBreeds = breedData?.data
+    ? Object.entries(breedData.data).flatMap(([main, subs]) =>
+      subs.length ? subs.map((sub: string) => `${main} ${sub}`) : [main]
+    )
+    : [];
+
+  return (
+    <div className="flex flex-col items-center gap-8 p-8">
+      <div className="header mb-5">
+        <h1 className="text-5xl mb-2">🐶 Dog Listing Homepage - NextJS</h1>
+        <p className="text-2xl text-gray-400">Browse adorable dogs by breed!</p>
+      </div>
+
+      <div className="bg-gray-800 p-4 rounded-xl shadow-xl max-w-[500px]">
+        {imageUrl ? (
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            className="w-full h-auto rounded-xl"
+            src={imageUrl}
+            alt="Random dog"
+            width={700}
+            height={700}
+            priority
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        ) : (
+          <p>Loading a cute dog...</p>
+        )}
+      </div>
+
+      <div className="bg-gray-800 p-4 px-8 rounded-xl shadow-xl max-w-[500px] w-full">
+        <h2 className="text-2xl mb-4">Dog Breeds</h2>
+        {breedFetched ? (
+          <ul className="list-none p-0">
+            {flattenedBreeds.slice(0, 10).map((breed, idx) => (
+              <li key={idx} className="py-1 border-b border-gray-600 text-gray-300">
+                {breed}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Loading breeds...</p>
+        )}
+      </div>
     </div>
   );
 }
