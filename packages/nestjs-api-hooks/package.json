@@ -1,6 +1,6 @@
 {
   "name": "nestjs-api-hooks",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [],
   "author": "",
