@@ -6,6 +6,4 @@
  * OpenAPI spec version: 1.0
  */
 
-export * from './dogBreedsResponse';
-export * from './dogBreedsResponseMessage';
 export * from './dogImage';

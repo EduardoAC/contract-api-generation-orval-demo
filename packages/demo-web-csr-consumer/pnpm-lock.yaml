@@ -43,8 +43,8 @@ importers:
         specifier: ^15.14.0
         version: 15.14.0
       nestjs-api-hooks:
-        specifier: ^1.0.5
-        version: 1.0.5(@faker-js/faker@9.4.0)(@tanstack/react-query@5.66.0(react@18.3.1))(axios@1.7.9)(msw@2.7.0(@types/node@22.12.0)(typescript@5.6.3))(react@18.3.1)
+        specifier: ^1.0.8
+        version: 1.0.8(@faker-js/faker@9.4.0)(@tanstack/react-query@5.66.0(react@18.3.1))(axios@1.7.9)(msw@2.7.0(@types/node@22.12.0)(typescript@5.6.3))(react@18.3.1)
       typescript:
         specifier: ~5.6.2
         version: 5.6.3
@@ -336,6 +336,7 @@ packages:
   '@faker-js/faker@9.4.0':
     resolution: {integrity: sha512-85+k0AxaZSTowL0gXp8zYWDIrWclTbRPg/pm/V0dSFZ6W6D4lhcG3uuZl4zLsEKfEvs69xDbLN2cHQudwp95JA==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+    deprecated: Please update to a newer version
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -357,8 +358,8 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@inquirer/confirm@5.1.9':
-    resolution: {integrity: sha512-NgQCnHqFTjF7Ys2fsqK2WtnA8X1kHyInyG+nMIuHowVTIgIuS10T4AznI/PvbqSpJqjCUqNBlKGh1v3bwLFL4w==}
+  '@inquirer/confirm@5.1.10':
+    resolution: {integrity: sha512-FxbQ9giWxUWKUk2O5XZ6PduVnH2CZ/fmMKMBkH71MHJvWr7WL5AHKevhzF1L5uYWB2P548o1RzVxrNd3dpmk6g==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
@@ -366,8 +367,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/core@10.1.10':
-    resolution: {integrity: sha512-roDaKeY1PYY0aCqhRmXihrHjoSW2A00pV3Ke5fTpMCkzcGF64R8e0lw3dK+eLEHwS4vB5RnW1wuQmvzoRul8Mw==}
+  '@inquirer/core@10.1.11':
+    resolution: {integrity: sha512-BXwI/MCqdtAhzNQlBEFE7CEflhPkl/BqvAuV/aK6lW3DClIfYVDWPP/kXuXHtBWC7/EEbNqd/1BGq2BGBBnuxw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
@@ -938,8 +939,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  graphql@16.10.0:
-    resolution: {integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==}
+  graphql@16.11.0:
+    resolution: {integrity: sha512-mS1lbMsxgQj6hge1XZ6p7GPhbrtFwUFYi3wRzXAC/FmYnyXMTvvI3td3rjmQ2u8ewXueaSvRPWaEcgVVOT9Jnw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   has-flag@4.0.0:
@@ -1094,8 +1095,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nestjs-api-hooks@1.0.5:
-    resolution: {integrity: sha512-4mDup/77nELdTbJqedxY8jsGQ4rHpuLahD4ZbmhWG/NVLn7CfLBDn0VBjhoHaq9RGZ/Z75yQFJKD1y9DUYFo5Q==}
+  nestjs-api-hooks@1.0.8:
+    resolution: {integrity: sha512-Anlg153QKjeVtKgxy9LFs98wwFrzWnJZ6xkUmAKJpT/raNWEXRz233n8k2n7xHod4n18CoGTMJkPXWwPuwOm2w==}
     peerDependencies:
       '@faker-js/faker': ^9.4.0
       '@tanstack/react-query': ^5.65.1
@@ -1276,8 +1277,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  type-fest@4.40.0:
-    resolution: {integrity: sha512-ABHZ2/tS2JkvH1PEjxFDTUWC8dB5OsIGZP4IFLhR293GqT5Y5qB1WwL2kMPYhQW9DVgVD8Hd7I8gjwPIf5GFkw==}
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
   typescript-eslint@8.22.0:
@@ -1653,14 +1654,14 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@inquirer/confirm@5.1.9(@types/node@22.12.0)':
+  '@inquirer/confirm@5.1.10(@types/node@22.12.0)':
     dependencies:
-      '@inquirer/core': 10.1.10(@types/node@22.12.0)
+      '@inquirer/core': 10.1.11(@types/node@22.12.0)
       '@inquirer/type': 3.0.6(@types/node@22.12.0)
     optionalDependencies:
       '@types/node': 22.12.0
 
-  '@inquirer/core@10.1.10(@types/node@22.12.0)':
+  '@inquirer/core@10.1.11(@types/node@22.12.0)':
     dependencies:
       '@inquirer/figures': 1.0.11
       '@inquirer/type': 3.0.6(@types/node@22.12.0)
@@ -2259,7 +2260,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql@16.10.0: {}
+  graphql@16.11.0: {}
 
   has-flag@4.0.0: {}
 
@@ -2367,20 +2368,20 @@ snapshots:
       '@bundled-es-modules/cookie': 2.0.1
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
-      '@inquirer/confirm': 5.1.9(@types/node@22.12.0)
+      '@inquirer/confirm': 5.1.10(@types/node@22.12.0)
       '@mswjs/interceptors': 0.37.6
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/until': 2.1.0
       '@types/cookie': 0.6.0
       '@types/statuses': 2.0.5
-      graphql: 16.10.0
+      graphql: 16.11.0
       headers-polyfill: 4.0.3
       is-node-process: 1.2.0
       outvariant: 1.4.3
       path-to-regexp: 6.3.0
       picocolors: 1.1.1
       strict-event-emitter: 0.5.1
-      type-fest: 4.40.0
+      type-fest: 4.41.0
       yargs: 17.7.2
     optionalDependencies:
       typescript: 5.6.3
@@ -2393,7 +2394,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nestjs-api-hooks@1.0.5(@faker-js/faker@9.4.0)(@tanstack/react-query@5.66.0(react@18.3.1))(axios@1.7.9)(msw@2.7.0(@types/node@22.12.0)(typescript@5.6.3))(react@18.3.1):
+  nestjs-api-hooks@1.0.8(@faker-js/faker@9.4.0)(@tanstack/react-query@5.66.0(react@18.3.1))(axios@1.7.9)(msw@2.7.0(@types/node@22.12.0)(typescript@5.6.3))(react@18.3.1):
     dependencies:
       '@faker-js/faker': 9.4.0
       '@tanstack/react-query': 5.66.0(react@18.3.1)
@@ -2564,7 +2565,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  type-fest@4.40.0: {}
+  type-fest@4.41.0: {}
 
   typescript-eslint@8.22.0(eslint@9.19.0)(typescript@5.6.3):
     dependencies:
