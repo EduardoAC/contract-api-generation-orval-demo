@@ -14,7 +14,7 @@ import type {
 } from '@tanstack/react-query';
 import axios from 'axios';
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import type { DogBreedsResponse, DogImage } from '.././model';
+import type { DogImage } from '.././model';
 
 /**
  * @summary Get a random dog image
@@ -77,70 +77,6 @@ export function useDogsControllerGetImage<
   axios?: AxiosRequestConfig;
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getDogsControllerGetImageQueryOptions(options);
-
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-    queryKey: QueryKey;
-  };
-
-  query.queryKey = queryOptions.queryKey;
-
-  return query;
-}
-
-export const dogsControllerGetBreeds = (
-  options?: AxiosRequestConfig,
-): Promise<AxiosResponse<DogBreedsResponse>> => {
-  return axios.get(`http://localhost:3000/dogs/breeds`, options);
-};
-
-export const getDogsControllerGetBreedsQueryKey = () => {
-  return [`http://localhost:3000/dogs/breeds`] as const;
-};
-
-export const getDogsControllerGetBreedsQueryOptions = <
-  TData = Awaited<ReturnType<typeof dogsControllerGetBreeds>>,
-  TError = AxiosError<unknown>,
->(options?: {
-  query?: UseQueryOptions<
-    Awaited<ReturnType<typeof dogsControllerGetBreeds>>,
-    TError,
-    TData
-  >;
-  axios?: AxiosRequestConfig;
-}) => {
-  const { query: queryOptions, axios: axiosOptions } = options ?? {};
-
-  const queryKey =
-    queryOptions?.queryKey ?? getDogsControllerGetBreedsQueryKey();
-
-  const queryFn: QueryFunction<
-    Awaited<ReturnType<typeof dogsControllerGetBreeds>>
-  > = ({ signal }) => dogsControllerGetBreeds({ signal, ...axiosOptions });
-
-  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof dogsControllerGetBreeds>>,
-    TError,
-    TData
-  > & { queryKey: QueryKey };
-};
-
-export type DogsControllerGetBreedsQueryResult = NonNullable<
-  Awaited<ReturnType<typeof dogsControllerGetBreeds>>
->;
-export type DogsControllerGetBreedsQueryError = AxiosError<unknown>;
-
-export function useDogsControllerGetBreeds<
-  TData = Awaited<ReturnType<typeof dogsControllerGetBreeds>>,
-  TError = AxiosError<unknown>,
->(options?: {
-  query?: UseQueryOptions<
-    Awaited<ReturnType<typeof dogsControllerGetBreeds>>,
-    TError,
-    TData
-  >;
-  axios?: AxiosRequestConfig;
-}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
-  const queryOptions = getDogsControllerGetBreedsQueryOptions(options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

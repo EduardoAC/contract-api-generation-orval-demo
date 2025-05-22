@@ -40,8 +40,8 @@ importers:
         specifier: 15.1.6
         version: 15.1.6(eslint@9.19.0(jiti@1.21.7))(typescript@5.7.3)
       nestjs-api-hooks:
-        specifier: ^1.0.4
-        version: 1.0.4(@faker-js/faker@9.4.0)(@tanstack/react-query@5.65.1(react@19.0.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.16)(typescript@5.7.3))(react@19.0.0)
+        specifier: ^1.0.5
+        version: 1.0.5(@faker-js/faker@9.4.0)(@tanstack/react-query@5.65.1(react@19.0.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.16)(typescript@5.7.3))(react@19.0.0)
       postcss:
         specifier: ^8
         version: 8.5.1
@@ -107,6 +107,7 @@ packages:
   '@faker-js/faker@9.4.0':
     resolution: {integrity: sha512-85+k0AxaZSTowL0gXp8zYWDIrWclTbRPg/pm/V0dSFZ6W6D4lhcG3uuZl4zLsEKfEvs69xDbLN2cHQudwp95JA==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+    deprecated: Please update to a newer version
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1327,8 +1328,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nestjs-api-hooks@1.0.4:
-    resolution: {integrity: sha512-+8q5QXgrvAgGcfD+FWOzED8CfeJAZPpzt1UmSJgig1yEX1gj2PlHMNUAIXWDjr8CnLaSfRVd/INAgIXfGydzFg==}
+  nestjs-api-hooks@1.0.5:
+    resolution: {integrity: sha512-4mDup/77nELdTbJqedxY8jsGQ4rHpuLahD4ZbmhWG/NVLn7CfLBDn0VBjhoHaq9RGZ/Z75yQFJKD1y9DUYFo5Q==}
     peerDependencies:
       '@faker-js/faker': ^9.4.0
       '@tanstack/react-query': ^5.65.1
@@ -3336,7 +3337,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nestjs-api-hooks@1.0.4(@faker-js/faker@9.4.0)(@tanstack/react-query@5.65.1(react@19.0.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.16)(typescript@5.7.3))(react@19.0.0):
+  nestjs-api-hooks@1.0.5(@faker-js/faker@9.4.0)(@tanstack/react-query@5.65.1(react@19.0.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.16)(typescript@5.7.3))(react@19.0.0):
     dependencies:
       '@faker-js/faker': 9.4.0
       '@tanstack/react-query': 5.65.1(react@19.0.0)

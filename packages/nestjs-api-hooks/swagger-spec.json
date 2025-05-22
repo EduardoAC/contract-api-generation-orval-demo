@@ -36,27 +36,6 @@
           "dogs"
         ]
       }
-    },
-    "/dogs/breeds": {
-      "get": {
-        "operationId": "DogsController_getBreeds",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Returns a map of dog breeds and their sub-breeds.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DogBreedsResponse"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "dogs"
-        ]
-      }
     }
   },
   "info": {
@@ -86,47 +65,6 @@
             "type": "string",
             "example": "success",
             "description": "Response status"
-          }
-        },
-        "required": [
-          "message",
-          "status"
-        ]
-      },
-      "DogBreedsResponse": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "object",
-            "description": "A map of dog breeds and their sub-breeds",
-            "example": {
-              "affenpinscher": [],
-              "australian": [
-                "kelpie",
-                "shepherd"
-              ],
-              "bulldog": [
-                "boston",
-                "english",
-                "french"
-              ],
-              "retriever": [
-                "golden",
-                "chesapeake",
-                "curly"
-              ]
-            },
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "status": {
-            "type": "string",
-            "description": "The status of the response",
-            "example": "success"
           }
         },
         "required": [

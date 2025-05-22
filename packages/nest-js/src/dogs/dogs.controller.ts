@@ -31,26 +31,26 @@ export class DogsController {
     }
   }
 
-  @Get('breeds')
-  @ApiResponse({
-    status: 200,
-    description: 'Returns a map of dog breeds and their sub-breeds.',
-    type: DogBreedsResponse,
-  })
-  async getBreeds() {
-    const url = `${this.dogsApi}/breeds/list/all`;
+  // @Get('breeds')
+  // @ApiResponse({
+  //   status: 200,
+  //   description: 'Returns a map of dog breeds and their sub-breeds.',
+  //   type: DogBreedsResponse,
+  // })
+  // async getBreeds() {
+  //   const url = `${this.dogsApi}/breeds/list/all`;
 
-    try {
-      const response =
-        await this.httpService.axiosRef.get<DogBreedsResponse>(url);
+  //   try {
+  //     const response =
+  //       await this.httpService.axiosRef.get<DogBreedsResponse>(url);
 
-      return response.data.message;
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        throw new Error(`Failed to fetch dog breeds: ${error.message}`);
-      } else {
-        throw new Error('An unknown error occurred');
-      }
-    }
-  }
+  //     return response.data.message;
+  //   } catch (error: unknown) {
+  //     if (error instanceof Error) {
+  //       throw new Error(`Failed to fetch dog breeds: ${error.message}`);
+  //     } else {
+  //       throw new Error('An unknown error occurred');
+  //     }
+  //   }
+  // }
 }
