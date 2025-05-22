@@ -3,20 +3,20 @@
 import Image from "next/image";
 import {
   useDogsControllerGetImage,
-  useDogsControllerGetBreeds,
+  // useDogsControllerGetBreeds,
 } from "nestjs-api-hooks";
 
 export default function Home() {
   const { data: imageData, isLoading: imageLoading } = useDogsControllerGetImage();
-  const { data: breedData, isFetched: breedFetched } = useDogsControllerGetBreeds();
+  // const { data: breedData, isFetched: breedFetched } = useDogsControllerGetBreeds();
 
   const imageUrl = !imageLoading ? (imageData?.data as unknown as string) : null;
 
-  const flattenedBreeds = breedData?.data
-    ? Object.entries(breedData.data).flatMap(([main, subs]) =>
-      subs.length ? subs.map((sub: string) => `${main} ${sub}`) : [main]
-    )
-    : [];
+  // const flattenedBreeds = breedData?.data
+  //   ? Object.entries(breedData.data).flatMap(([main, subs]) =>
+  //     subs.length ? subs.map((sub: string) => `${main} ${sub}`) : [main]
+  //   )
+  //   : [];
 
   return (
     <div className="flex flex-col items-center gap-8 p-8">
@@ -42,7 +42,8 @@ export default function Home() {
 
       <div className="bg-gray-800 p-4 px-8 rounded-xl shadow-xl max-w-[500px] w-full">
         <h2 className="text-2xl mb-4">Dog Breeds</h2>
-        {breedFetched ? (
+        <p>Need to implement</p>
+        {/* {breedFetched ? (
           <ul className="list-none p-0">
             {flattenedBreeds.slice(0, 10).map((breed, idx) => (
               <li key={idx} className="py-1 border-b border-gray-600 text-gray-300">
@@ -52,7 +53,7 @@ export default function Home() {
           </ul>
         ) : (
           <p>Loading breeds...</p>
-        )}
+        )} */}
       </div>
     </div>
   );
