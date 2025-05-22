@@ -2,7 +2,7 @@ import { HttpService } from '@nestjs/axios';
 import { Controller, Get } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { DogImage } from './entities/dog.entity';
-import { DogBreedsResponse } from './entities/breed.entity';
+// import { DogBreedsResponse } from './entities/breed.entity';
 
 @ApiTags('dogs')
 @Controller('dogs')
