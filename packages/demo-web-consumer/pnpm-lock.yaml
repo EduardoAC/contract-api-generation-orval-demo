@@ -40,8 +40,8 @@ importers:
         specifier: 15.1.6
         version: 15.1.6(eslint@9.27.0(jiti@1.21.7))(typescript@5.8.3)
       nestjs-api-hooks:
-        specifier: ^1.0.6
-        version: 1.0.10(@faker-js/faker@9.4.0)(@tanstack/react-query@5.76.1(react@19.1.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.50)(typescript@5.8.3))(react@19.1.0)
+        specifier: ^1.0.13
+        version: 1.0.13(@faker-js/faker@9.4.0)(@tanstack/react-query@5.76.1(react@19.1.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.50)(typescript@5.8.3))(react@19.1.0)
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -1451,8 +1451,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nestjs-api-hooks@1.0.10:
-    resolution: {integrity: sha512-JVeQMhIfDhJOMRGgIBbpV4p+K8Gug2xoOAP3fxG6SSnv0IdnsOFRzmmJNpuvEijjAJitVUgYBYdUtJxtfC5xTg==}
+  nestjs-api-hooks@1.0.13:
+    resolution: {integrity: sha512-aE6khGDhigTS6tp5kKc51DOk/6/U100ZRBpMkI5oM/3V8nIZkAjJ7TbpPhYXDm39PlKCHa3iJkGA+PhDmixnfA==}
     peerDependencies:
       '@faker-js/faker': ^9.4.0
       '@tanstack/react-query': ^5.65.1
@@ -3549,7 +3549,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nestjs-api-hooks@1.0.10(@faker-js/faker@9.4.0)(@tanstack/react-query@5.76.1(react@19.1.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.50)(typescript@5.8.3))(react@19.1.0):
+  nestjs-api-hooks@1.0.13(@faker-js/faker@9.4.0)(@tanstack/react-query@5.76.1(react@19.1.0))(axios@1.7.9)(msw@2.7.0(@types/node@20.17.50)(typescript@5.8.3))(react@19.1.0):
     dependencies:
       '@faker-js/faker': 9.4.0
       '@tanstack/react-query': 5.76.1(react@19.1.0)
